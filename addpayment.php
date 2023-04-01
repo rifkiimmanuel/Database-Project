@@ -38,19 +38,21 @@ if (isset($_POST['Submit'])) {
                 <td>payment method</td>
             
               <td> <select name="payment_method">
-                <option value="bca">BCA </option>
+                <option value="bca">BNI </option>
                <option value="mandiri">Mandiri</option>
                <option value="gopay">Gopay</option>
               <option value="ovo">Ovo</option>
+              <option value="dana">Dana</option>
+              <option value="bca">BCA</option>
               </select>
               </td>
             </tr>
             <tr>
-                <td>total payment bill</td>
+                <td>Total Payment Bill</td>
                 <td><input type="text" name="total_payment_bill"></td>
             </tr>
             <tr>
-                <td>payment date</td>
+                <td>Payment date</td>
                 <td><input type="text" name="payment_date"></td>
             </tr>
             <tr>
