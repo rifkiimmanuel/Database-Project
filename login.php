@@ -104,8 +104,9 @@ if(isset($_POST['login'])){
              </form>    
          </div>                     
      </div>  
-     <h5> log in as restaurant</h5>
- <h5> log in as customer</h5>
+     <a href="login.php"> log in as restaurant</a>
+     <br></br>
+ <a href ="loginowner.php"> log in as customer</a>
  </div>
 
 </div>
