@@ -35,24 +35,24 @@ if (isset($_POST['Submit'])) {
                 <td><input type="text" name="table_id"></td>
             </tr>
             <tr>
-                <td> table number </td>
+                <td>Table number </td>
                 <td><input type="text" name="table_number"></td>
             </tr>
             <tr>
-                <td>table capacity</td>
+                <td>Table capacity</td>
                 <td><input type="text" name="table_capacity"></td>
             </tr>
             <tr>
-                <td>table_availibility</td>
+                <td>Table_availibility</td>
                 <td><input type="text" name="table_availibility"></td>
             </tr>
             <tr>
-                <td>restaurant_id</td>
+                <td>Restaurant_id</td>
                 <td><input type="text" name="restaurant_id"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="addcust" <a href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="addcust"  href="indexcustomer.php"></a></td>
             </tr>
         </table>
     </form>

@@ -1,6 +1,7 @@
 <?php  
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,31 +11,34 @@
  <link rel ="stylesheet" href="style.css">
  <title>Reservation Restaurant (tampilan awal setelah log in) </title>
 </head>
-<body> 
- <nav>
-  <label class = "logo">Reservation</label>
-  <ul> 
-   <li>
-    <a class+ "active" href= ""> Home </a>
-   </li>
-   <li>
-    <a href= "addreservation.php"> Reservation </a>
+
+
+    <body> 
+    <nav>
+    <label class = "logo">Reservation</label>
+
+    <ul> 
+    <li>
+        <a class+ "active" href= "">Home </a>
     </li>
     <li>
-    <a href= "indexcustomer.php"> Customer </a>
-</li>
-<li>
-    <a href= ""> Time </a>
-</li> 
-<li>
-    <a href= "indexpayment.php"> payment check </a>
-   </li>
-   <li>
-    <a href= ""> feedback </a>
-   </li>
-  </ul>
- </nav>
- 
+        <a href= "addreservation.php">Reservation</a>
+        </li>
+        <li>
+        <a href= "indexcustomer.php">Customer</a>
+    </li>
+    <li>
+        <a href= "">Time</a>
+    </li> 
+    <li>
+        <a href= "indexpayment.php">Payment Check</a>
+    </li>
+    <li>
+        <a href= "">Feedback </a>
+    </li>
+    </ul>
+    </nav>
+    
 
-</body>
+    </body>
 </html>

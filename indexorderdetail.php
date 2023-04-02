@@ -19,14 +19,19 @@ $result = mysqli_query($conn, "SELECT * FROM order_detail ");
     <a href="add.php">reservation now</a><br><br>
     <table border="1">
         <tr>
-            <th> Order detail ID  </th>
-            <th>Total Order </th>
-            <th>Order unit price  </th>
-            <th>order id  </th>
-            <th>food id </th>
+            <th>Order Detail ID</th>
+
+            <th>Total Order</th>
+
+            <th>Order Unit Price</th>
+
+            <th>Order Id</th>
+
+            <th>Food Id</th>
          
         </tr>
-        <?php
+
+<?php
         while ($order_detail = mysqli_fetch_array($result)) {
             echo "<tr>";
             echo "<td>" . $order_detail['order_detail_id'] . "</td>";
@@ -38,7 +43,9 @@ $result = mysqli_query($conn, "SELECT * FROM order_detail ");
              //     <a href='delete.php?ID=" . $reservation['ID'] . "'>Delete</a></td>";
             //echo "</tr>";
         }
-        ?>
+?>
+
     </table>
+    
 </body>
 </html>

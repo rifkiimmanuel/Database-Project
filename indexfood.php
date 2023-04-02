@@ -24,6 +24,7 @@ $result = mysqli_query($conn, "SELECT * FROM food ");
             <th>food description  </th>
             <th>food price</th>
             <th>category id</th>
+            <th> edit </th>
            
         </tr>
         <?php
@@ -34,9 +35,9 @@ $result = mysqli_query($conn, "SELECT * FROM food ");
             echo "<td>" . $food['food_description'] . "</td>";
             echo "<td>" . $food['food_price'] . "</td>";
             echo "<td>" . $food['category_id'] . "</td>";
-           // echo "<td><a href='edit.php?ID=" . $food['ID'] . "'>Edit</a> |
-             //     <a href='delete.php?ID=" . $food['ID'] . "'>Delete</a></td>";
-            //echo "</tr>";
+             echo "<td>
+                  <a href='deletefood.php?ID=" . $food['food_id'] . "'>Delete</a></td>";
+            echo "</tr>";
         }
         ?>
     </table>

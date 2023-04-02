@@ -24,6 +24,7 @@ if (isset($_POST['Submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Sekarang</title>
 </head>
+
 <body>
     <a href="indexfoodcat.php">GO TO HOME</a><br><br>
     <form action="addfoodcat.php" method="post" name="form1">
@@ -33,23 +34,19 @@ if (isset($_POST['Submit'])) {
                 <td><input type="text" name="category_id"></td>
             </tr> -->
             <tr>
-             <td>Kategori</td>
-
+             <td>Category</td>
 <td>
   <select name="name_category">
     <option value="Indonesian food">Indonesian food</option>
     <option value="American Food">American Food</option>
-    <option value="western">western</option>
+    <option value="western">Western Food</option>
     <option value="Indian food">Indian food</option>
   </select>
 </td>
-
-      
-            <tr>
-                <td></td>
-                <td><input type="submit" name="Submit" value="Add Food"></td>
-
-            </tr>
+     <tr>
+        <td></td>
+        <td><input type="submit" name="Submit" value="Add Food"></td>
+      </tr>
         </table>
     </form>
 </body>

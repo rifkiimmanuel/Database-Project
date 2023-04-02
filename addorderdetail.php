@@ -28,26 +28,27 @@ if (isset($_POST['Submit'])) {
 </head>
 <body>
     <a href="indexorderdetail.php">GO To Home</a><br><br>
+
     <form action="addorderdetail.php" method="post" name="form1">
         <table width="25%" border="0">
            <tr>
-                <td>order detail iD</td>
+                <td>Order detail iD</td>
                 <td><input type="text" name="order_detail_id"></td>
             </tr>
             <tr>
-                <td> total order </td>
+                <td>Total order </td>
                 <td><input type="text" name="total_order"></td>
             </tr>
             <tr>
-                <td>order unit price</td>
+                <td>Order unit price</td>
                 <td><input type="text" name="order_unit_price"></td>
             </tr>
             <tr>
-                <td>order id</td>
+                <td>Order id</td>
                 <td><input type="text" name="order_id"></td>
             </tr>
             <tr>
-                <td>food id</td>
+                <td>Food id</td>
                 <td><input type="text" name="food_id"></td>
             </tr>
             <tr>

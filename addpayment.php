@@ -24,7 +24,7 @@ if (isset($_POST['Submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Sekarang</title>
+    <title>Add Payment</title>
 </head>
 <body>
     <a href="indexpayment.php">GO TO HOME</a><br><br>
@@ -35,15 +35,15 @@ if (isset($_POST['Submit'])) {
                 <td><input type="text" name="payment_id"></td>
             </tr>
             <tr>
-                <td>payment method</td>
+                <td>Payment Method</td>
             
               <td> <select name="payment_method">
-                <option value="bca">BNI </option>
-               <option value="mandiri">Mandiri</option>
-               <option value="gopay">Gopay</option>
-              <option value="ovo">Ovo</option>
-              <option value="dana">Dana</option>
-              <option value="bca">BCA</option>
+                <option value="bni">BNI </option>
+                <option value="mandiri">Mandiri</option>
+                <option value="gopay">Gopay</option>
+                <option value="ovo">Ovo</option>
+                <option value="dana">Dana</option>
+                <option value="bca">BCA</option>
               </select>
               </td>
             </tr>
@@ -52,16 +52,16 @@ if (isset($_POST['Submit'])) {
                 <td><input type="text" name="total_payment_bill"></td>
             </tr>
             <tr>
-                <td>Payment date</td>
+                <td>Payment Date</td>
                 <td><input type="text" name="payment_date"></td>
             </tr>
             <tr>
-                <td>order id</td>
+                <td>Order id</td>
                 <td><input type="text" name="order_id"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="addcust" <a href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="Add"  href="indexcustomer.php"></a>></td>
             </tr>
         </table>
     </form>

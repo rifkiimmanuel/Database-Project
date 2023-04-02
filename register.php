@@ -4,14 +4,15 @@ if (isset($_POST['Submit'])) {
     $user = $_POST['username'];
     $pass = md5($_POST['password']);
     $email = $_POST['email'];
+    $fullname =$_POST['fullname'];
 
 
     // include database connection file
     include_once("config.php");
 
     // insert customer data into table
-    $result = mysqli_query($conn, "INSERT INTO login (username, password, email)
-    VALUES('$user','$pass', '$email')");
+    $result = mysqli_query($conn, "INSERT INTO login (username, password, email,fullname)
+    VALUES('$user','$pass', '$email', '$fullname')");
 
     // Show message when customer added
     echo "Customer added successfully. <a href='login.php'>View Customers</a><br><br>";
@@ -23,28 +24,44 @@ if (isset($_POST['Submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register </title>
+    <title> Register </title>
 </head>
+
+
 <body>
-    <a href="login.php">GO To Home</a><br><br>
+    <a href="login.php">Go To Home</a>
+
+    <br><br>
+
+
     <form action="register.php" method="post" name="form1">
+
         <table width="25%" border="0">
-           <tr>
-                <td>username ID</td>
-                <td><input type="text" name="username"></td>
-            </tr>
-            <tr>
-                <td>password </td>
-                <td><input type="password" name="password"></td>
-            </tr>
-            <tr>
-                <td>email </td>
-                <td><input type="text" name="email"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" name="Submit" value="addcust" <a href="login.php"></a>></td>
-            </tr>
+
+         <tr>
+            <td>Full Name</td>
+            <td><input type="text" placeholder="input your name" name="fullname"></td>
+         </tr>
+
+         <tr>
+            <td>Usename</td>
+            <td><input type="text" placeholder="input your username" name="username"></td>
+         </tr>
+
+         <tr>
+             <td>Password</td>
+            <td><input type="password" placeholder="input your password" name="password"></td>
+         </tr>
+
+         <tr>
+            <td>Email</td>
+            <td><input type="text" placeholder="input your email" name="email"></td>
+         </tr>
+
+         <tr>
+            <td></td>
+            <td><input type="submit" name="Submit" value="Register"  href="login.php"></></td>
+         </tr>
         </table>
     </form>
 </body>

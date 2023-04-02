@@ -15,17 +15,23 @@ $result = mysqli_query($conn, "SELECT * FROM  table_restaurant");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIST RESERVATION</title>
 </head>
+
 <body>
     <a href="add.php">reservation now</a><br><br>
     <table border="1">
         <tr>
-            <th>table id </th>
-            <th>table number  </th>
-            <th>table capacity  </th>
-            <th>ntable availibility </th>
-            <th>restaurant id</th>
+            <th>Table Id </th>
+
+            <th>Table Number</th>
+
+            <th>Table Capacity</th>
+
+            <th>Table Avaibility</th>
+
+            <th>Restaurant Id</th>
         </tr>
-        <?php
+
+<?php
         while ($table_restaurant = mysqli_fetch_array($result)) {
             echo "<tr>";
             echo "<td>" . $table_restaurant['table_id'] . "</td>";
@@ -37,7 +43,9 @@ $result = mysqli_query($conn, "SELECT * FROM  table_restaurant");
              //     <a href='delete.php?ID=" . $reservation['ID'] . "'>Delete</a></td>";
             //echo "</tr>";
         }
-        ?>
+?>
     </table>
 </body>
+
+
 </html>

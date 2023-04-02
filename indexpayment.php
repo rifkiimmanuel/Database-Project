@@ -19,11 +19,11 @@ $result = mysqli_query($conn, "SELECT * FROM payment ");
     <a href="add.php">reservation now</a><br><br>
     <table border="2">
         <tr>
-            <th> payment id  </th>
-            <th>payment method </th>
-            <th>total payment bill  </th>
-            <th>payment date   </th>
-            <th>order id </th>
+            <th>Payment id  </th>
+            <th>Payment method </th>
+            <th>Total payment bill  </th>
+            <th>Payment date   </th>
+            <th>Order id </th>
          
         </tr>
         <?php

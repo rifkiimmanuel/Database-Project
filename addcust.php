@@ -26,34 +26,45 @@ if (isset($_POST['Submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login now</title>
 </head>
+
 <body>
-    <a href="indexcustomer.php">GO TO HOME</a><br><br>
+    <a href="indexcustomer.php">GO TO HOME</a>
+
+    <br></br>
+
     <form action="addcust.php" method="post" name="form1">
         <table width="25%" border="0">
+
            <tr>
                 <td>ID</td>
                 <td><input type="text" name="customer_id"></td>
             </tr>
+
             <tr>
                 <td>Name</td>
                 <td><input type="text" name="name"></td>
             </tr>
+
             <tr>
                 <td>Phone Number</td>
                 <td><input type="text" name="phone_number"></td>
             </tr>
+
             <tr>
                 <td>Email</td>
                 <td><input type="text" name="email"></td>
             </tr>
+            
             <tr>
                 <td>Address</td>
                 <td><input type="text" name="address"></td>
             </tr>
+
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="addcust" <a href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="addcust" href="indexcustomer.php"></a>></td>
             </tr>
+
         </table>
     </form>
 </body>

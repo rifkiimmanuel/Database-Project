@@ -26,7 +26,7 @@ if (isset($_POST['Submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add resrvation (admin) </title>
+    <title>Add reservation </title>
 </head>
 <body>
     <a href="index.php">Go To Home</a><br><br>
@@ -34,11 +34,11 @@ if (isset($_POST['Submit'])) {
     <form action="addreservation.php" method="post" name="form1">
         <table width="25%" border="0">
            <tr>
-                <td>reservation ID</td>
+                <td>Reservation ID</td>
                 <td><input type="text" name="reservation_id"></td>
             </tr>
             <tr>
-                <td> name  cust</td>
+                <td>Name  cust</td>
                 <td><input type="text" name="Name_cust"></td>
             </tr>
             <tr>
@@ -46,11 +46,11 @@ if (isset($_POST['Submit'])) {
                 <td><input type="date" name="reservation_date"></td>
             </tr>
             <tr>
-                <td>reservation time</td>
+                <td>Reservation time</td>
                 <td><input type="text" name="reservation_time"></td>
             </tr>
             <tr>
-                <td>total guests</td>
+                <td>Total guests</td>
                 <td><input type="text" name="number_of_guests"></td>
             </tr>
             <tr>
@@ -63,7 +63,7 @@ if (isset($_POST['Submit'])) {
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="Add" <a href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="Add"  href="indexcustomer.php"></a></td>
             </tr>
         </table>
     </form>

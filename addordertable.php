@@ -31,28 +31,28 @@ if (isset($_POST['Submit'])) {
     <form action="addordertable.php" method="post" name="form1">
         <table width="25%" border="0">
            <tr>
-                <td>order ID</td>
+                <td>Order ID</td>
                 <td><input type="text" name="order_id"></td>
             </tr>
             <tr>
-                <td> order date </td>
+                <td>Order date </td>
                 <td><input type="text" name="order_date"></td>
             </tr>
             <tr>
-                <td>order bill</td>
+                <td>Order bill</td>
                 <td><input type="text" name="order_bill"></td>
             </tr>
             <tr>
-                <td>order status</td>
+                <td>Order status</td>
                 <td><input type="text" name="order_status"></td>
             </tr>
             <tr>
-                <td>reservation_id</td>
+                <td>Reservation_id</td>
                 <td><input type="text" name="reservation_id"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="addcust" <a href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="Add"  href="indexcustomer.php"></a>></td>
             </tr>
         </table>
     </form>

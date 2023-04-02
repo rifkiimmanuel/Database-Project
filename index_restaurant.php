@@ -16,13 +16,13 @@ $result = mysqli_query($conn, "SELECT * FROM restaurant ");
     <title>Restaurant </title>
 </head>
 <body>
-    <a href="index.php">reservation now</a><br><br>
+    <a href="index.php">Reservation Now</a><br><br>
     <table border="1">
         <tr>
-            <th>restaurant id</th>
-            <th>restaurant name   </th>
-            <th>restaurant address   </th>
-            <th>restaurant phone number</th>
+            <th>Restaurant Id</th>
+            <th>Restaurant Name</th>
+            <th>Restaurant Address</th>
+            <th>Restaurant Phone Number</th>
            
         </tr>
         <?php

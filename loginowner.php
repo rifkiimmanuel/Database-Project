@@ -106,7 +106,10 @@ if(isset($_POST['login'])){
      </div>  
      <a href =loginowner.php > log in as restaurant</a>
      <td></td>
+     <br></br>
  <a href = "login.php"> log in as customer </a>
+ <br></br>
+ <a href ="register.php"> Don't have account? register now </a>
  </div>
 
 </div>

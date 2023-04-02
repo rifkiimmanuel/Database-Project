@@ -16,18 +16,24 @@ $result = mysqli_query($conn, "SELECT * FROM customer ");
     <title>LIST customer</title>
 </head>
 <body>
-    <a href="index.php">customer</a><br><br>
+    <a href="index.php">Customer</a><br><br>
     <table border="1">
         <tr>
-            <th>customer ID</th>
-            <th>name  </th>
-            <th>phone number </th>
-            <th>email</th>
-            <th>address</th>
-            <th> delete</th>
+            <th>Customer ID</th>
+
+            <th>Name</th>
+
+            <th>Phone number </th>
+
+            <th>Email</th>
+
+            <th>Address</th>
+
+            <th>Delete</th>
            
         </tr>
-        <?php
+
+<?php
         while ($customer = mysqli_fetch_array($result)) {
             echo "<tr>";
             echo "<td>" . $customer['customer_id'] . "</td>";
@@ -39,7 +45,7 @@ $result = mysqli_query($conn, "SELECT * FROM customer ");
             <a href='deletecustomer.php?ID=" . $customer['customer_id'] . "'>Delete</a></td>";
             echo "</tr>";
         }
-        ?>
+?>
     </table>
 </body>
 </html>
