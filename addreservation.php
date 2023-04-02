@@ -29,7 +29,8 @@ if (isset($_POST['Submit'])) {
     <title>Add resrvation (admin) </title>
 </head>
 <body>
-    <a href="indexreservation.php">GO To Home</a><br><br>
+    <a href="index.php">Go To Home</a><br><br>
+    <a href ="indexreservation.php"> check info </a>
     <form action="addreservation.php" method="post" name="form1">
         <table width="25%" border="0">
            <tr>
@@ -42,7 +43,7 @@ if (isset($_POST['Submit'])) {
             </tr>
             <tr>
                 <td>Reservation date</td>
-                <td><input type="text" name="reservation_date"></td>
+                <td><input type="date" name="reservation_date"></td>
             </tr>
             <tr>
                 <td>reservation time</td>
@@ -62,7 +63,7 @@ if (isset($_POST['Submit'])) {
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="addcust" <a href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="Add" <a href="indexcustomer.php"></a>></td>
             </tr>
         </table>
     </form>
