@@ -21,13 +21,13 @@
     <a href= "addreservation.php"> Reservation </a>
     </li>
     <li>
-    <a href= ""> What Kind of Food </a>
+    <a href= "indexcustomer.php"> Customer </a>
 </li>
 <li>
     <a href= ""> Time </a>
 </li> 
 <li>
-    <a href= ""> payment check </a>
+    <a href= "indexpayment.php"> payment check </a>
    </li>
    <li>
     <a href= ""> feedback </a>

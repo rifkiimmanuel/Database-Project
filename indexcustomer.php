@@ -24,6 +24,7 @@ $result = mysqli_query($conn, "SELECT * FROM customer ");
             <th>phone number </th>
             <th>email</th>
             <th>address</th>
+            <th> delete</th>
            
         </tr>
         <?php
@@ -35,7 +36,7 @@ $result = mysqli_query($conn, "SELECT * FROM customer ");
             echo "<td>" . $customer['email'] . "</td>";
             echo "<td>" . $customer['address'] . "</td>";
            // echo "<td><a href='edit.php?ID=" . $customer['ID'] . "'>Edit</a> |
-             //     <a href='delete.php?ID=" . $customer['ID'] . "'>Delete</a></td>";
+               echo "<td> <a href='deletecustomer.php?ID=" . $customer['customer_id'] . "'>Delete</a></td>";
             //echo "</tr>";
         }
         ?>
