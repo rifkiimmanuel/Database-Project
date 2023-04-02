@@ -35,9 +35,9 @@ $result = mysqli_query($conn, "SELECT * FROM customer ");
             echo "<td>" . $customer['phone_number'] . "</td>";
             echo "<td>" . $customer['email'] . "</td>";
             echo "<td>" . $customer['address'] . "</td>";
-           // echo "<td><a href='edit.php?ID=" . $customer['ID'] . "'>Edit</a> |
-               echo "<td> <a href='deletecustomer.php?ID=" . $customer['customer_id'] . "'>Delete</a></td>";
-            //echo "</tr>";
+            echo "<td>
+            <a href='deletecustomer.php?ID=" . $customer['customer_id'] . "'>Delete</a></td>";
+      echo "</tr>";
         }
         ?>
     </table>
