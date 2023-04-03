@@ -20,22 +20,27 @@ $rememberme ="";
 
 if(isset($_POST['login'])){
  $username   = $_POST['username'];
+ $number = $_POST['number'];
  $password   = $_POST['password'];
  $rememberme   = isset ($_POST['rememberme']);
 
- if($username == '' or $password == ''){
-     $err .=   "<li>Enter your username and password.</li>";
- }else{
-  $sql1 = "select * from login where username = '$username'";
-  $q1   = mysqli_query($conn,$sql1);
-  if (mysqli_num_rows($q1) == 0) {
-      $err .= "<li>Username <b>$username</b>Wrong! .</li>";
-  } else {
-      $r1   = mysqli_fetch_array($q1);
-      if($r1['password'] != md5($password)){
-          $err .= "<li>Incorrect password .</li>";
-      }
-  }
+ if ($username == '' or $password == '') {
+    $err .= "<li>Enter your username and password.</li>";
+} else {
+    $sql1 = "SELECT * FROM loginowner WHERE username = '$username'";
+    $q1 = mysqli_query($conn, $sql1);
+
+    if (mysqli_num_rows($q1) == 0) {
+        $err .= "<li>Username <b>$username</b> is incorrect.</li>";
+    } else {
+        $r2 = mysqli_fetch_array($q1);
+        if ($r2['number'] != $_POST['number']) {
+            $err .= "<li>Incorrect phone number.</li>";
+        } else if ($r2['password'] != md5($password)) {
+            $err .= "<li>Incorrect password.</li>";
+        }
+    }
+
   
      
      if(empty($err)){
@@ -53,7 +58,7 @@ if(isset($_POST['login'])){
              $cookie_time = time() + (60 * 60 * 24 * 30);
              setcookie($cookie_name,$cookie_value,$cookie_time,"/");
          }
-         header("location:indexcustomer.php");
+         header("location:indexowner.php");
      }
  }
 }
@@ -89,10 +94,14 @@ if(isset($_POST['login'])){
                      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                      <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
                  </div>
+                 <div style="margin-bottom: 25px" class="input-group">
+                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                     <input id="login-password" type="text" class="form-control" name="number" placeholder="number">
+                 </div>
                  <div class="input-group">
                      <div class="checkbox">
                      <label>
-                         <input id="login-remember" type="checkbox" name="rememberme" value="1" <?php if($rememberme == '1') echo "checked"?>> Ingat Aku
+                         <input id="login-remember" type="checkbox" name="rememberme" value="1" <?php if($rememberme == '1') echo "checked"?>> Remember username
                      </label>
                      </div>
                  </div>

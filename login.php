@@ -92,7 +92,7 @@ if(isset($_POST['login'])){
                  <div class="input-group">
                      <div class="checkbox">
                      <label>
-                         <input id="login-remember" type="checkbox" name="rememberme" value="1" <?php if($rememberme == '1') echo "checked"?>> Ingat Aku
+                         <input id="login-remember" type="checkbox" name="rememberme" value="1" <?php if($rememberme == '1') echo "checked"?>> Remember username
                      </label>
                      </div>
                  </div>
@@ -104,9 +104,9 @@ if(isset($_POST['login'])){
              </form>    
          </div>                     
      </div>  
-     <a href="login.php"> log in as restaurant</a>
+     <a href="loginowner.php"> log in as restaurant</a>
      <br></br>
- <a href ="loginowner.php"> log in as customer</a>
+ <a href ="login.php"> log in as customer</a>
  <br></br>
  <a href ="register.php"> Don't have account? register now </a>
  </div>

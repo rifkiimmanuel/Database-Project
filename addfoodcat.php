@@ -1,7 +1,7 @@
 <?php
 // check if form submitted
 if (isset($_POST['Submit'])) {
-   // $category_id = $_POST['category_id'];
+    $category_id = $_POST['category_id'];
     $name_category = $_POST['name_category'];
 
 
@@ -10,7 +10,7 @@ if (isset($_POST['Submit'])) {
 
     // insert customer data into table
     $result = mysqli_query($conn, "INSERT INTO food_category (category_id, name_category)
-    VALUES('NULL','$name_category')"); //dibuat null karena category id nya yang otomatis increment 
+    VALUES('$category_id','$name_category')"); //dibuat null karena category id nya yang otomatis increment 
 
     // Show message when customer added
     echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
@@ -29,10 +29,10 @@ if (isset($_POST['Submit'])) {
     <a href="indexfoodcat.php">GO TO HOME</a><br><br>
     <form action="addfoodcat.php" method="post" name="form1">
         <table width="25%" border="0">
-           <!-- <tr>
+            <tr>
                 <td>ID</td>
                 <td><input type="text" name="category_id"></td>
-            </tr> -->
+            </tr> 
             <tr>
              <td>Category</td>
 <td>

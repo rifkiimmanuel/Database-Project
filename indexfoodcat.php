@@ -35,9 +35,9 @@ $result = mysqli_query($conn, "SELECT * FROM food_category");
             echo "<td>" . $food_category['category_id'] . "</td>";
             echo "<td>" . $food_category['name_category'] . "</td>";
 
-           // echo "<td><a href='edit.php?ID=" . $food_category['ID'] . "'>Edit</a> |
-             //     <a href='delete.php?ID=" . $food_category['ID'] . "'>Delete</a></td>";
-            //echo "</tr>";
+            echo "<td><a href='edit.php?ID=" . $food_category['category_id'] . "'>Edit</a> |
+                  <a href='deletefoodcat.php?ID=" . $food_category['category_id'] . "'>Delete</a></td>";
+            echo "</tr>";
         }
 ?>
 
