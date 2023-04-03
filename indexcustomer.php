@@ -45,6 +45,7 @@ $result = mysqli_query($conn, "SELECT * FROM customer ");
             <a href='deletecustomer.php?ID=" . $customer['customer_id'] . "'>Delete</a></td>";
             echo "</tr>";
         }
+    
 ?>
     </table>
 </body>

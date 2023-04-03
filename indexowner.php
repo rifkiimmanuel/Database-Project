@@ -19,10 +19,10 @@
 
     <ul> 
     <li>
-        <a class+ "active" href= "">Home </a>
+        <a class+ "active" href= "indexowner.php">Home</a>
     </li>
     <li>
-        <a href= "indexcustomer.php">Check customer</a>
+        <a href= "indexcustomer.php">Check Customer</a>
         </li>
         <li>
         <a href= "indexfoodcat.php">Category Menu</a>
@@ -34,10 +34,10 @@
         <a href= "indexpayment.php">Payment</a>
     </li>
     <li>
-        <a href= "indexordertable.php">Table </a>
+        <a href= "indexordertable.php">Table</a>
     </li>
     <li>
-        <a href= "indexreservation.php">reservation </a>
+        <a href= "indexreservation.php">Reservation</a>
     </li>
     </ul>
     </nav>

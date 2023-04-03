@@ -15,7 +15,9 @@ if (isset($_POST['Submit'])) {
     VALUES('$customer_id','$name','$phone_number','$email','$address')");
 
     // Show message when customer added
-    echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
+    echo "Customer added successfully. <a href='index.php'>View Customers</a>
+    <br><br>";
+    header('Location: addreservation.php');
 }
 ?>
 
@@ -62,7 +64,7 @@ if (isset($_POST['Submit'])) {
 
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="addcust" href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="Next" href="indexcustomer.php"></a></td>
             </tr>
 
         </table>
