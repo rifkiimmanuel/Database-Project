@@ -27,7 +27,7 @@ if(isset($_POST['login'])){
  if ($username == '' or $password == '') {
     $err .= "<li>Enter your username and password.</li>";
 } else {
-    $sql1 = "SELECT * FROM loginowner WHERE username = '$username'";
+    $sql1 = "SELECT * FROM login WHERE username = '$username'";
     $q1 = mysqli_query($conn, $sql1);
 
     if (mysqli_num_rows($q1) == 0) {
@@ -113,7 +113,7 @@ if(isset($_POST['login'])){
              </form>    
          </div>                     
      </div>  
-     <a href =loginowner.php > log in as restaurant</a>
+     <a href =login.php > log in as restaurant</a>
      <td></td>
      <br></br>
  <a href = "login.php"> log in as customer </a>

@@ -11,8 +11,8 @@ if (isset($_POST['Submit'])) {
     include_once("config.php");
 
     // insert customer data into table
-    $result = mysqli_query($conn, "INSERT INTO login (username, password, email,fullname)
-    VALUES('$user','$pass', '$email', '$fullname')");
+    $result = mysqli_query($conn, "INSERT INTO login (username, password, email, fullname, role)
+    VALUES('$user','$pass', '$email', '$fullname', 'user')");
 
     // Show message when customer added
     echo "Customer added successfully. <a href='login.php'>View Customers</a><br><br>";

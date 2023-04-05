@@ -37,11 +37,11 @@ $result = mysqli_query($conn, "SELECT * FROM  table_restaurant");
             echo "<td>" . $table_restaurant['table_id'] . "</td>";
             echo "<td>" . $table_restaurant['table_number'] . "</td>";
             echo "<td>" . $table_restaurant['table_capacity'] . "</td>";
-            echo "<td>" . $table_restaurant['table_avaibility'] . "</td>";
+            echo "<td>" . $table_restaurant['table_availibility'] . "</td>";
             echo "<td>" . $table_restaurant['restaurant_id'] . "</td>";
-           // echo "<td><a href='edit.php?ID=" . $reservation['ID'] . "'>Edit</a> |
-             //     <a href='delete.php?ID=" . $reservation['ID'] . "'>Delete</a></td>";
-            //echo "</tr>";
+            echo "<td><a href='edit.php?ID=" . $table_restaurant['table_id'] . "'>Edit</a> |
+                  <a href='indextable.php?ID=" . $table_restaurant['table_id'] . "'>Delete</a></td>";
+            echo "</tr>";
         }
 ?>
     </table>

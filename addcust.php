@@ -10,14 +10,17 @@ if (isset($_POST['Submit'])) {
     // include database connection file
     include_once("config.php");
 
-    // insert customer data into table
-    $result = mysqli_query($conn, "INSERT INTO customer (customer_id, name, phone_number, email, address)
-    VALUES('$customer_id','$name','$phone_number','$email','$address')");
+    if (!$name || !$phone_number || !$email || !$address) {
+        echo "Please fill in all required fields.";
+    } else {
+        // insert customer data into table
+        $result = mysqli_query($conn, "INSERT INTO customer (customer_id, name, phone_number, email, address)
+        VALUES('$customer_id','$name','$phone_number','$email','$address')");
 
-    // Show message when customer added
-    echo "Customer added successfully. <a href='index.php'>View Customers</a>
-    <br><br>";
-    header('Location: addreservation.php');
+        // Show message when customer added
+        echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
+        header('Location: addreservation.php');
+    }
 }
 ?>
 

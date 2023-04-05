@@ -38,7 +38,7 @@ if (isset($_POST['Submit'])) {
                 <td>Payment Method</td>
             
               <td> <select name="payment_method">
-                <option value="bni">BNI </option>
+                <option value="bankjago">BNI </option>
                 <option value="mandiri">Mandiri</option>
                 <option value="gopay">Gopay</option>
                 <option value="ovo">Ovo</option>

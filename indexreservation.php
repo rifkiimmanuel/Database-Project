@@ -44,9 +44,9 @@ $result = mysqli_query($conn, "SELECT * FROM reservation ");
             echo "<td>" . $reservation['number_of_guests'] . "</td>";
             echo "<td>" . $reservation['customer_id'] . "</td>";
             echo "<td>" . $reservation['table_id'] . "</td>";
-           // echo "<td><a href='edit.php?ID=" . $reservation['ID'] . "'>Edit</a> |
-             //     <a href='delete.php?ID=" . $reservation['ID'] . "'>Delete</a></td>";
-            //echo "</tr>";
+            echo "<td><a href='edit.php?ID=" . $reservation['reservation_id'] . "'>Edit</a> |
+                  <a href='deletereservation.php?ID=" . $reservation['reservation_id'] . "'>Delete</a></td>";
+            echo "</tr>";
         }
 ?>
     </table>

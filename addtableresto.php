@@ -4,7 +4,7 @@ if (isset($_POST['Submit'])) {
     $table_id = $_POST['table_id'];
     $table_number = $_POST['table_number'];
     $table_capacity = $_POST['table_capacity'];
-    $table_avalibility = $_POST['table_availibility'];
+    $table_availibility = $_POST['table_availibility'];
     $restaurant_id = $_POST['restaurant_id'];
 
     // include database connection file
@@ -16,6 +16,7 @@ if (isset($_POST['Submit'])) {
 
     // Show message when customer added
     echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
+    header('Location: addreservation.php');
 }
 ?>
 

@@ -34,9 +34,9 @@ $result = mysqli_query($conn, "SELECT * FROM payment ");
             echo "<td>" . $payment['total_payment_bill'] . "</td>";
             echo "<td>" . $payment['payment_date'] . "</td>";
             echo "<td>" . $payment['order_id'] . "</td>";
-           // echo "<td><a href='edit.php?ID=" . $order_table['ID'] . "'>Edit</a> |
-             //     <a href='delete.php?ID=" . $order_table['ID'] . "'>Delete</a></td>";
-            //echo "</tr>";
+            echo "<td><a href='edit.php?ID=" . $payment['payment_id'] . "'>Edit</a> |
+                  <a href='deletepayment.php?ID=" . $payment['payment_id'] . "'>Delete</a></td>";
+            echo "</tr>";
         }
         ?>
     </table>

@@ -16,6 +16,7 @@ if (isset($_POST['Submit'])) {
 
     // Show message when customer added
     echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
+    header('Location: addorderdetail.php');
 }
 ?>
 
@@ -36,7 +37,7 @@ if (isset($_POST['Submit'])) {
             </tr>
             <tr>
                 <td>Order date </td>
-                <td><input type="text" name="order_date"></td>
+                <td><input type="date" name="order_date"></td>
             </tr>
             <tr>
                 <td>Order bill</td>
@@ -52,7 +53,7 @@ if (isset($_POST['Submit'])) {
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="Add"  href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="Add"  href="indexcustomer.php"></a></td>
             </tr>
         </table>
     </form>

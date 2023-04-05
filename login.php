@@ -1,62 +1,60 @@
 <?php
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $dbname = "project";
-
 include_once("config.php");
-//create connection 
-$conn = mysqli_connect($servername,$username,$password,$dbname);
+session_start();
 
-
-
-
-// atur variable nya 
-
+// set variables
 $err = "";
-$username ="";
-$rememberme =""; 
+$username = "";
+$rememberme = ""; 
+
 // check if form submitted
-
 if(isset($_POST['login'])){
- $username   = $_POST['username'];
- $password   = $_POST['password'];
- $rememberme   = isset ($_POST['rememberme']);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $rememberme = isset($_POST['rememberme']);
+    $role = $_POST['role'];
 
- if($username == '' or $password == ''){
-     $err .= "<li>Silakan masukkan username dan juga password.</li>";
- }else{
-  $sql1 = "select * from login where username = '$username'";
-  $q1   = mysqli_query($conn,$sql1);
-  if (mysqli_num_rows($q1) == 0) {
-      $err .= "<li>Username <b>$username</b> tidak tersedia.</li>";
-  } else {
-      $r1   = mysqli_fetch_array($q1);
-      if($r1['password'] != md5($password)){
-          $err .= "<li>Password yang dimasukkan tidak sesuai.</li>";
-      }
-  }
-  
-     
-     if(empty($err)){
-         $_SESSION['session_username'] = $username; //server
-         $_SESSION['session_password'] = md5($password);
+    if($username == '' or $password == ''){
+        $err .= "<li>Silakan masukkan username dan juga password.</li>";
+    } else {
+        $sql1 = "SELECT * FROM login WHERE username = '$username'";
+        $q1 = mysqli_query($conn, $sql1);
+        if (mysqli_num_rows($q1) == 0) {
+            $err .= "<li>Username <b>$username</b> tidak tersedia.</li>";
+        } else {
+            $r1 = mysqli_fetch_array($q1);
+            if($r1['password'] != md5($password)){
+                $err .= "<li>Password yang dimasukkan tidak sesuai.</li>";
+            }
+        }
 
-         if($rememberme == 1){
-             $cookie_name = "cookie_username";
-             $cookie_value = $username;
-             $cookie_time = time() + (60 * 60 * 24 * 30);
-             setcookie($cookie_name,$cookie_value,$cookie_time,"/");
+        if(empty($err)){
+            $_SESSION['session_username'] = $username;
+            $_SESSION['session_password'] = md5($password);
+            $_SESSION['session_role'] = $role;
 
-             $cookie_name = "cookie_password";
-             $cookie_value = md5($password);
-             $cookie_time = time() + (60 * 60 * 24 * 30);
-             setcookie($cookie_name,$cookie_value,$cookie_time,"/");
-         }
-         header("location:index.php");
-     }
- }
+            if($rememberme == 1){
+                $cookie_name = "cookie_username";
+                $cookie_value = $username;
+                $cookie_time = time() + (60 * 60 * 24 * 30);
+                setcookie($cookie_name, $cookie_value, $cookie_time, "/");
+
+                $cookie_name = "cookie_password";
+                $cookie_value = md5($password);
+                $cookie_time = time() + (60 * 60 * 24 * 30);
+                setcookie($cookie_name, $cookie_value, $cookie_time, "/");
+            }
+            
+            if($_SESSION['session_role'] == 'Admin'){
+                header("location:index.php");
+            } else {
+                header("location:indexreservation.php");
+            }
+        }
+    }
 }
+?>
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
