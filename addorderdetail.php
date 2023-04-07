@@ -1,7 +1,8 @@
 <?php
+
 // check if form submitted
 if (isset($_POST['Submit'])) {
-    $order_detail_id = $_POST['order_detail_id'];
+    $order_id = $_POST['order_id'];
     $total = $_POST['total_order'];
     $order_id = $_POST['order_id'];
     $food_id = $_POST['food_id'];
@@ -10,24 +11,26 @@ if (isset($_POST['Submit'])) {
     include_once("config.php");
 
     // retrieve food price from database based on food id
-  // retrieve food price from database based on food id
-$result = mysqli_query($conn, "SELECT food_price FROM food WHERE food_id='$food_id'");
-$row = mysqli_fetch_assoc($result);
-$food_price = $row['food_price'];
+    $result = mysqli_query($conn, "SELECT food_price FROM food WHERE food_id='$food_id'");
+    $row = mysqli_fetch_assoc($result);
+    $food_price = $row['food_price'];
 
-// calculate order unit price based on total order and food price
-$order_unit_price = $food_price * $total;
+    // insert order detail data into table
+    $order_unit_price = $food_price * $total;
+    $result = mysqli_query($conn, "INSERT INTO order_detail (order_id, total_order, order_unit_price, food_id)
+    VALUES('$order_id','$total','$order_unit_price','$food_id')");
+                 $new_order_detail = mysqli_insert_id($conn);
+                 header('Location: order_detail.php?id=' . $new_order_detail);
 
-// insert order detail data into table
-$result = mysqli_query($conn, "INSERT INTO order_detail (order_detail_id, total_order, order_unit_price, order_id, food_id)
-VALUES('$order_detail_id','$total','$order_unit_price','$order_id', '$food_id')");
-
-    // Show message when order detail added
-    echo "Order detail added successfully. <a href='indexorderdetail.php'>View Order Details</a><br><br>";
-    header('Location: addpayment.php');
+    if ($result) {
+        // Show message when order detail added
+        echo "Order detail added successfully. <a href='indexorderdetail.php'>View Order Details</a><br><br>";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
 }
-?>
 
+?>
 
 
 <html lang="en">
@@ -35,7 +38,7 @@ VALUES('$order_detail_id','$total','$order_unit_price','$order_id', '$food_id')"
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add order detail (admin) </title>
+    <title>Add order detail</title>
 </head>
 <body>
     <a href="indexorderdetail.php">GO To Home</a><br><br>
@@ -44,7 +47,7 @@ VALUES('$order_detail_id','$total','$order_unit_price','$order_id', '$food_id')"
         <table width="25%" border="0">
            <tr>
                 <td>Order detail iD</td>
-                <td><input type="text" name="order_detail_id"></td>
+                <td><input type="text" name="order_id"></td>
             </tr>
             <tr>
                 <td>Total order </td>
@@ -57,6 +60,30 @@ VALUES('$order_detail_id','$total','$order_unit_price','$order_id', '$food_id')"
             <tr>
                 <td>Order id</td>
                 <td><input type="text" name="order_id"></td>
+                <td>
+                <!-- <select name="food_id">
+                <option value="1">001</option>
+                <option value="2">002</option>
+                <option value="3">003</option>
+                <option value="4">004</option>
+                <option value="5">005</option>
+                <option value="6">006</option>
+                <option value="7">007</option>
+                <option value="8">008</option>
+                <option value="9">009</option>
+                <option value="10">010</option>
+                <option value="11">011</option>
+                <option value="12">012</option>
+                <option value="13">013</option>
+                <option value="14">014</option>
+                <option value="15">015</option>
+                <option value="16">016</option>
+                <option value="17">017</option>
+                <option value="18">018</option>
+                <option value="19">019</option>
+                <option value="20">020</option>
+                </select> -->
+            </td>
             </tr>
             <tr>
             <td>Order Food</td>

@@ -5,14 +5,13 @@ if (isset($_POST['Submit'])) {
     $table_number = $_POST['table_number'];
     $table_capacity = $_POST['table_capacity'];
     $table_availibility = $_POST['table_availibility'];
-    $restaurant_id = $_POST['restaurant_id'];
 
     // include database connection file
     include_once("config.php");
 
     // insert customer data into table
-    $result = mysqli_query($conn, "INSERT INTO table_restaurant (table_id, table_number, table_capacity, table_availibility, restaurant_id)
-    VALUES('$table_id','$table_number','$table_capacity','$table_availibility', '$restaurant_id')");
+    $result = mysqli_query($conn, "INSERT INTO table_restaurant (table_id, table_number, table_capacity, table_availibility)
+    VALUES('NULL','$table_number','$table_capacity','$table_availibility')");
 
     // Show message when customer added
     echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
@@ -31,10 +30,10 @@ if (isset($_POST['Submit'])) {
     <a href="indextablerest.php">GO To Home</a><br><br>
     <form action="addtableresto.php" method="post" name="form1">
         <table width="25%" border="0">
-           <tr>
+           <!-- <tr>
                 <td>Table ID</td>
                 <td><input type="text" name="table_id"></td>
-            </tr>
+            </tr> -->
             <tr>
                 <td>Table number </td>
                 <td><input type="text" name="table_number"></td>

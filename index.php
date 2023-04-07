@@ -1,5 +1,5 @@
 <?php  
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel ="stylesheet" href="style.css">
- <title>Reservation Restaurant (tampilan awal setelah log in) </title>
+ <title>Reservation Restaurant </title>
 </head>
 
 
@@ -22,23 +22,23 @@
         <a class+ "active" href= "">Home </a>
     </li>
     <li>
-        <a href= "addreservation.php">Reservation</a>
+        <a href= "addcust.php">Reservation</a>
         </li>
         <li>
-        <a href= "indexcustomer.php">Customer</a>
+        <a href= "addcust.php">Check Your reservation</a>
     </li>
     <li>
-        <a href= "">Time</a>
+        <a href= "indexfood.php">Check Menu</a>
     </li> 
     <li>
-        <a href= "indexpayment.php">Payment Check</a>
+        <a href= "indexreservation.php">Daftar Reservation</a>
     </li>
     <li>
         <a href= "">Feedback </a>
     </li>
     </ul>
     </nav>
-    
-
     </body>
+
+    
 </html>

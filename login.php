@@ -12,7 +12,6 @@ if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $rememberme = isset($_POST['rememberme']);
-    $role = $_POST['role'];
 
     if($username == '' or $password == ''){
         $err .= "<li>Silakan masukkan username dan juga password.</li>";
@@ -25,6 +24,8 @@ if(isset($_POST['login'])){
             $r1 = mysqli_fetch_array($q1);
             if($r1['password'] != md5($password)){
                 $err .= "<li>Password yang dimasukkan tidak sesuai.</li>";
+            } else {
+                $role = $r1['role'];
             }
         }
 
@@ -45,14 +46,16 @@ if(isset($_POST['login'])){
                 setcookie($cookie_name, $cookie_value, $cookie_time, "/");
             }
             
-            if($_SESSION['session_role'] == 'Admin'){
-                header("location:index.php");
+            if($role == 'admin'){
+                header("location:indexowner.php");
             } else {
-                header("location:indexreservation.php");
+                header("location:index.php");
             }
         }
     }
 }
+?>
+
 ?>
 
 ?>

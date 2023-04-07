@@ -35,7 +35,7 @@ if (isset($_POST['Submit'])) {
                 <td><input type="text" name="payment_id"></td>
             </tr>
             <tr>
-                <td>Payment Method</td>
+                <td>Add your payment method</td>
             
               <td> <select name="payment_method">
                 <option value="bankjago">BNI </option>
@@ -53,7 +53,7 @@ if (isset($_POST['Submit'])) {
             </tr>
             <tr>
                 <td>Payment Date</td>
-                <td><input type="text" name="payment_date"></td>
+                <td><input type="date" name="payment_date"></td>
             </tr>
             <tr>
                 <td>Order id</td>
@@ -61,7 +61,7 @@ if (isset($_POST['Submit'])) {
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Submit" value="Add"  href="indexcustomer.php"></a>></td>
+                <td><input type="submit" name="Submit" value="Add"  href="indexcustomer.php"></a></td>
             </tr>
         </table>
     </form>

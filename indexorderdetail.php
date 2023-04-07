@@ -34,7 +34,7 @@ $result = mysqli_query($conn, "SELECT * FROM order_detail ");
 <?php
         while ($order_detail = mysqli_fetch_array($result)) {
             echo "<tr>";
-            echo "<td>" . $order_detail['order_detail_id'] . "</td>";
+            echo "<td>" . $order_detail['order_id'] . "</td>";
             echo "<td>" . $order_detail['total_order'] . "</td>";
             echo "<td>" . $order_detail['order_unit_price'] . "</td>";
             echo "<td>" . $order_detail['order_id'] . "</td>";

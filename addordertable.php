@@ -1,4 +1,7 @@
 <?php
+    include_once("config.php");
+
+
 // check if form submitted
 if (isset($_POST['Submit'])) {
     $order_id = $_POST['order_id'];
@@ -7,8 +10,13 @@ if (isset($_POST['Submit'])) {
     $order_status = $_POST['order_status'];
     $reservation_id = $_POST['reservation_id'];
 
-    // include database connection file
-    include_once("config.php");
+
+    $query = "SELECT reservation_id FROM reservation WHERE reservation_id = '$reservation_id'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) == 0) {
+        echo "Reservation ID does not exist. Please enter a valid ID.";
+    ;
+    } else{
 
     // insert customer data into table
     $result = mysqli_query($conn, "INSERT INTO order_table (order_id, order_date, order_bill, order_status, reservation_id)
@@ -17,6 +25,7 @@ if (isset($_POST['Submit'])) {
     // Show message when customer added
     echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
     header('Location: addorderdetail.php');
+    }
 }
 ?>
 

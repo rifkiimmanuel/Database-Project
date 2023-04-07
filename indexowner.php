@@ -38,7 +38,7 @@
     </li>
     <li>
         <a href= "indexreservation.php">Reservation</a>
-    </li>
+    </li> 
     </ul>
     </nav>
     

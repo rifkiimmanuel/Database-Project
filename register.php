@@ -1,24 +1,27 @@
-<?php
+<?php  // include database connection file
+include_once("config.php");
+
 // check if form submitted
 if (isset($_POST['Submit'])) {
     $user = $_POST['username'];
     $pass = md5($_POST['password']);
     $email = $_POST['email'];
-    $fullname =$_POST['fullname'];
+    $fullname = $_POST['fullname'];
 
+    // check if username already exists
+    $result = mysqli_query($conn, "SELECT * FROM login WHERE username='$user'");
+    if(mysqli_num_rows($result) > 0) {
+        echo "Username already exists. Please choose a different username.<br><br>";
+    } else {
+        // insert customer data into table
+        $result = mysqli_query($conn, "INSERT INTO login (username, password, email, fullname, role)
+        VALUES('$user','$pass', '$email', '$fullname', 'user')");
 
-    // include database connection file
-    include_once("config.php");
-
-    // insert customer data into table
-    $result = mysqli_query($conn, "INSERT INTO login (username, password, email, fullname, role)
-    VALUES('$user','$pass', '$email', '$fullname', 'user')");
-
-    // Show message when customer added
-    echo "Customer added successfully. <a href='login.php'>View Customers</a><br><br>";
+        // Show message when customer added
+        echo "Customer added successfully. <a href='login.php'>View Customers</a><br><br>";
+    }
 }
 ?>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
