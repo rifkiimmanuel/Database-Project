@@ -103,8 +103,6 @@ if (isset($_POST['Submit'])) {
     </nav>
 
     <br></br>
-    <a href="index.php">Go To Home</a><br><br>
-    <a href ="indexreservation.php"> check info </a>
     <form action="addreservation.php" method="post" name="form1">
         <table width="25%" border="0">
            <!-- <tr>
