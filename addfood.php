@@ -10,14 +10,16 @@ if (isset($_POST['Submit'])) {
     // include database connection file
     include_once("config.php");
 
-    // insert customer data into table
-    $result = mysqli_query($conn, "INSERT INTO food (food_id, food_name, food_description, food_price,  category_id)
+    // insert food data into table
+    $result = mysqli_query($conn, "INSERT INTO food (food_id, food_name, food_description, food_price, category_id)
     VALUES('$food_id','$food_name','$food_description','$food_price','$category_id')");
 
-    // Show message when customer added
-    echo "Customer added successfully. <a href='index.php'>View Customers</a><br><br>";
+    // redirect to addfoodowner.php
+    header("Location: indexfoodowner.php");
+    exit(); // stop executing the script
 }
 ?>
+
 
 <html lang="en">
 <head>
@@ -27,7 +29,7 @@ if (isset($_POST['Submit'])) {
     <title>LIST FOOD</title>
 </head>
 <body>
-    <a href="indexfood.php">Go To Home</a>
+    
     <br><br>
     <form action="addfood.php" method="post" name="form1">
 

@@ -44,13 +44,8 @@ while ($payment = mysqli_fetch_array($result)) {
 
     <form name="update_payment" method="post" action="editpayment.php">
         <table border="0">
-            <!-- <tr>
-                <td> payment method</td>
-                <td><input type="text" name="name" value="<?php echo $payment_method;?>"></td>
-            </tr> -->
             <tr>
                 <td>Payment Method</td>
-            
               <td> <select name="payment_method">
                 <option value="bankjago">BNI </option>
                 <option value="mandiri">Mandiri</option>
@@ -59,8 +54,6 @@ while ($payment = mysqli_fetch_array($result)) {
                 <option value="dana">Dana</option>
                 <option value="bca">BCA</option>
               </select>
-              </td>
-              <td><input type="text" name="name" value="<?php echo $payment_method;?>"></td>
             </tr>
             <tr>
                 <td>Total payment bill</td>

@@ -4,13 +4,13 @@
 include_once("config.php");
 
 //Get id from URL to delete that customer
-$food_id = $_GET['ID'];
+$order_id = $_GET['ID'];
 
 // delete customer row from table based on given ID
-$result = mysqli_query($conn, "DELETE FROM `food` WHERE food_id = '$food_id'");
+$result = mysqli_query($conn, "DELETE FROM `order_detail` WHERE order_id = '$order_id'");
 
 // After delete redirect to Home, so that latest customer list will be displayed
-header("Location:indexfoodowner.php");
+header("Location:indexorderdetail.php");
 
 
 

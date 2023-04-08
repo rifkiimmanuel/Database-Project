@@ -22,19 +22,13 @@ session_start();
         <a class+ "active" href= "">Home </a>
     </li>
     <li>
-        <a href= "addcust.php">Reservation</a>
+        <a href= "addordertable.php">order table</a>
         </li>
         <li>
-        <a href= "reservation_detail2.php">Check Your reservation</a>
+        <a href= "addpayment.php">Payment</a>
     </li>
     <li>
-        <a href= "indexfood.php">Check Menu</a>
-    </li> 
-    <li>
-        <a href= "indexreservation2.php"> Reservation List</a>
-    </li>
-    <li>
-        <a href= "logout.php"> Log out</a>
+        <a href= "indexcashier.php">Daftar Reservation</a>
     </li>
     </ul>
     </nav>

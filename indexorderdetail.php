@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel ="stylesheet" href="style.css">
+ <title>Reservation Restaurant App </title>
+</head>
+
+
+    <body> 
+    <nav>
+    <label class = "logo">Reservation</label>
+
+    <ul> 
+    <li>
+        <a class+ "active" href= "indexowner.php">Home</a>
+    </li>
+    <li>
+    <a href= "indexcustomer.php">Check Customer</a>
+    </li>
+    <li>
+        <a href= "indexreservation.php"> check Reservation</a>
+    </li> 
+    <li>
+    <a href= "indexfoodcat.php">Category Menu</a>
+    </li>
+    <li>
+        <a href= "indexfoodowner.php">Menu</a>
+    </li> 
+    <li>
+        <a href= "indexpayment.php">Payment</a>
+    </li>
+    <li>
+        <a href= "indexorderdetail.php">Order</a>
+    </li>
+    </ul>
+    </nav>
+    
+
+    </body>
+</html>
+
+
+
+
 <?php
 
 // create database using config file
@@ -16,7 +63,7 @@ $result = mysqli_query($conn, "SELECT * FROM order_detail ");
     <title>LIST RESERVATION</title>
 </head>
 <body>
-    <a href="add.php">reservation now</a><br><br>
+
     <table border="1">
         <tr>
             <th>Order Detail ID</th>
@@ -39,9 +86,9 @@ $result = mysqli_query($conn, "SELECT * FROM order_detail ");
             echo "<td>" . $order_detail['order_unit_price'] . "</td>";
             echo "<td>" . $order_detail['order_id'] . "</td>";
             echo "<td>" . $order_detail['food_id'] . "</td>";
-           // echo "<td><a href='edit.php?ID=" . $reservation['ID'] . "'>Edit</a> |
-             //     <a href='delete.php?ID=" . $reservation['ID'] . "'>Delete</a></td>";
-            //echo "</tr>";
+            echo "<td><a href='editorderdetail.php?ID=" . $order_detail['order_id'] . "'>Edit</a> |
+                  <a href='delete.php?ID=" . $order_detail['order_id'] . "'>Delete</a></td>";
+            echo "</tr>";
         }
 ?>
 

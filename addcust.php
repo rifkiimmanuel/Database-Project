@@ -52,7 +52,18 @@ if (isset($_POST['Submit'])) {
 //     }
 // }
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 
 <html lang="en">
 <head>
@@ -63,7 +74,7 @@ if (isset($_POST['Submit'])) {
     <title>RESERVATION</title>
 </head>
 <body> 
-    <nav>
+<nav>
     <label class = "logo">Reservation</label>
 
     <ul> 
@@ -74,19 +85,16 @@ if (isset($_POST['Submit'])) {
         <a href= "addcust.php">Reservation</a>
         </li>
         <li>
-        <a href= "reservation_detail.php">Check Your reservation</a>
+        <a href= "reservation_detail2.php">Check Your reservation</a>
     </li>
     <li>
         <a href= "indexfood.php">Check Menu</a>
     </li> 
     <li>
-        <a href= "indexreservation.php">Daftar Reservation</a>
-    </li>
-    <li>
-        <a href= "">Feedback </a>
+        <a href= "indexreservation2.php">Daftar Reservation</a>
     </li>
     </ul>
-    </nav>
+    </nav> 
 
     <br></br>
 

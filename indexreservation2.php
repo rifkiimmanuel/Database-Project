@@ -5,7 +5,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel ="stylesheet" href="style.css">
- <title>Reservation Restaurant App </title>
+ <title>Reservation Restaurant </title>
 </head>
 
 
@@ -15,32 +15,27 @@
 
     <ul> 
     <li>
-        <a class+ "active" href= "indexowner.php">Home</a>
+        <a class+ "active" href= "index.php">Home </a>
     </li>
     <li>
-    <a href= "indexcustomer.php">Check Customer</a>
+        <a href= "addcust.php">Reservation</a>
+        </li>
+        <li>
+        <a href= "reservation_detail2.php">Check Your reservation</a>
     </li>
     <li>
-        <a href= "indexreservation.php"> check Reservation</a>
+        <a href= "indexfood.php">Check Menu</a>
     </li> 
     <li>
-    <a href= "indexfoodcat.php">Category Menu</a>
-    </li>
-    <li>
-        <a href= "indexfoodowner.php">Menu</a>
-    </li> 
-    <li>
-        <a href= "indexpayment.php">Payment</a>
-    </li>
-    <li>
-        <a href= "indexorderdetail.php">Order</a>
+        <a href= "indexreservation2.php">Daftar Reservation</a>
     </li>
     </ul>
     </nav>
-    
-
     </body>
+
+    
 </html>
+
 <?php 
 
 echo "<br> </br>";
@@ -54,7 +49,7 @@ echo "<br> </br>";
 include_once("config.php");
 
 // fetch all user data from database
-$result = mysqli_query($conn, "SELECT * FROM reservation ");
+$result = mysqli_query($conn, "SELECT * FROM reservation ORDER BY reservation_date ASC");
 
 
 // Query untuk mencari data
@@ -62,7 +57,7 @@ if(isset($_GET['cari'])){
     $cari = $_GET['cari'];
     $query = "SELECT * FROM reservation WHERE Name_cust LIKE '%$cari%'";
 } else {
-    $query = "SELECT * FROM reservation";
+    $query = "SELECT * FROM reservation ORDER BY reservation_date ASC";
 }
 
 ?>
@@ -93,7 +88,7 @@ if(isset($_GET['cari'])){
 <body>
     <table border="1">
         <tr>
-            <th>Reservation Id</th>
+            <!-- <th>Reservation Id</th> -->
 
             <th>Name Customer </th>
 
@@ -101,27 +96,23 @@ if(isset($_GET['cari'])){
 
             <th>Reservation Time</th>
 
-            <th>Number Of Guests</th>
+            <!-- <th>Number Of Guests</th>
 
             <th>Customer Id</th>
 
-            <th>Table Id</th>
+            <th>Table Id</th> -->
          
         </tr>
 <?php
         while ($reservation = mysqli_fetch_array($result)) {
             echo "<tr>";
-            echo "<td>" . $reservation['reservation_id'] . "</td>";
+            // echo "<td>" . $reservation['reservation_id'] . "</td>";
             echo "<td>" . $reservation['Name_cust'] . "</td>";
             echo "<td>" . $reservation['reservation_date'] . "</td>";
             echo "<td>" . $reservation['reservation_time'] . "</td>";
-            echo "<td>" . $reservation['number_of_guests'] . "</td>";
-            echo "<td>" . $reservation['customer_id'] . "</td>";
-            echo "<td>" . $reservation['table_id'] . "</td>";
-            echo "<td><a href='editreservation.php?reservation_id=" . $reservation['reservation_id'] . "'>Edit</a> |
-                  <a href='deletereservation.php?reservation_id=" . $reservation['reservation_id'] . "'>Delete</a></td>";
-           
-
+            // echo "<td>" . $reservation['number_of_guests'] . "</td>";
+            // echo "<td>" . $reservation['customer_id'] . "</td>";
+            // echo "<td>" . $reservation['table_id'] . "</td>";
             echo "</tr>";
         }
 ?>

@@ -24,43 +24,59 @@ $result = mysqli_query($conn, "SELECT * FROM food ");
 
     <ul> 
     <li>
-        <a class+ "active" href= "index.php">Home </a>
+    <a class+ "active" href= "indexowner.php">Home</a>
     </li>
     <li>
-        <a href= "addcust.php">Reservation</a>
-        </li>
-        <li>
-        <a href= "reservation_detail2.php">Check Your reservation</a>
+    <a href= "indexcustomer.php">Check Customer</a>
     </li>
     <li>
-        <a href= "indexfood.php">Check Menu</a>
+        <a href= "indexreservation.php"> check Reservation</a>
     </li> 
     <li>
-        <a href= "indexreservation2.php">Daftar Reservation</a>
+    <a href= "indexfoodcat.php">Category Menu</a>
     </li>
-    </ul>
+    <li>
+        <a href= "indexfoodowner.php">Menu</a>
+    </li> 
+    <li>
+        <a href= "indexpayment.php">Payment</a>
+    </li>
+    <li>
+        <a href= "indexorderdetail.php">Order</a>
     </nav>
 
 
-    <a href="index.php">reservation now</a><br><br>
+    <br><br>
     <table border="1">
         <tr>
+            <th>food id</th>
             <th> Menu </th>
             <th>Description  </th>
             <th>Price</th>
+            <th>category id</th>
+            <th> edit </th>
            
         </tr>
         <?php
         while ($food = mysqli_fetch_array($result)) {
             echo "<tr>";
-            // echo "<td>" . $food['food_id'] . "</td>";
+            echo "<td>" . $food['food_id'] . "</td>";
             echo "<td>" . $food['food_name'] . "</td>";
             echo "<td>" . $food['food_description'] . "</td>";
             echo "<td>" . $food['food_price'] . "</td>";
+            echo "<td>" . $food['category_id'] . "</td>";
             // echo "<td>" . $food['category_id'] . "</td>";
+             echo "<td><a href='editfood.php?ID=" . $food['food_id'] . "'>Edit</a> |
+                  <a href='deletefood.php?ID=" . $food['food_id'] . "'>Delete</a></td>";
+                  // echo "<td><a href='addfood.php?ID=" . $food['food_id'] . "'> add </a></td>";
+
             echo "</tr>";
         }
         ?>
+
+        
     </table>
+    <a href="addfood.php" class="button">Add new Food</a>
+
 </body>
 </html>

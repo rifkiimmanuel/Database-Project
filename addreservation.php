@@ -1,4 +1,48 @@
 <?php 
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<nav>
+    <label class = "logo">Reservation</label>
+
+    <ul> 
+    <li>
+        <a class+ "active" href= "index.php">Home </a>
+    </li>
+    <li>
+        <a href= "addreservation.php">Reservation</a>
+        </li>
+        <li>
+        <a href= "reservation_detail.php">Check Your reservation</a>
+    </li>
+    <li>
+        <a href= "indexfood.php">Check Menu</a>
+    </li> 
+    <li>
+        <a href= "indexpayment.php">Daftar Reservation</a>
+    </li>
+    <li>
+        <a href= "">Feedback </a>
+    </li>
+    </ul>
+    </nav>
+    
+</body>
+</html>
+
+
+
+<?php 
 include_once("config.php");
 if(isset($_GET['id'])) {
     $customer_id = $_GET['id'];
@@ -71,36 +115,13 @@ if (isset($_POST['Submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="style.css">
     
     <title>Add reservation </title>
 </head>
 <body>
 
 
-    <nav>
-    <label class = "logo">Reservation</label>
-
-    <ul> 
-    <li>
-        <a class+ "active" href= "index.php">Home </a>
-    </li>
-    <li>
-        <a href= "addreservation.php">Reservation</a>
-        </li>
-        <li>
-        <a href= "reservation_detail.php">Check Your reservation</a>
-    </li>
-    <li>
-        <a href= "indexfood.php">Check Menu</a>
-    </li> 
-    <li>
-        <a href= "indexpayment.php">Daftar Reservation</a>
-    </li>
-    <li>
-        <a href= "">Feedback </a>
-    </li>
-    </ul>
-    </nav>
 
     <br></br>
     <form action="addreservation.php" method="post" name="form1">

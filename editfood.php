@@ -14,7 +14,7 @@ if (isset($_POST['update'])) {
     $result = mysqli_query($conn, "UPDATE food SET food_name='$food_name', food_description='$food_description', food_price='$food_price' WHERE food_id=$food_id");
 
     // redirect to homepage
-    header("Location: indexfood.php");
+    header("Location: indexfoodowner.php");
 }
 
 // get food ID from URL

@@ -22,23 +22,24 @@
         <a class+ "active" href= "indexowner.php">Home</a>
     </li>
     <li>
-        <a href= "indexcustomer.php">Check Customer</a>
-        </li>
-        <li>
-        <a href= "indexfoodcat.php">Category Menu</a>
+    <a href= "indexcustomer.php">Check Customer</a>
     </li>
     <li>
-        <a href= "indexfood.php">Menu</a>
+        <a href= "indexreservation.php"> check Reservation</a>
     </li> 
     <li>
-        <a href= "indexpayment.php">Payment</a>
+    <a href= "indexfoodcat.php">Category Menu</a>
     </li>
     <li>
-        <a href= "indexordertable.php">Table</a>
-    </li>
-    <li>
-        <a href= "indexreservation.php">Reservation</a>
+        <a href= "indexfoodowner.php">Menu</a>
     </li> 
+    <li>
+        <a href= "indexpayment.php">Payment Menu</a>
+    </li>
+    <li>
+        <a href= "indexorderdetail.php">Order</a>
+    </li>
+    
     </ul>
     </nav>
     

@@ -69,16 +69,13 @@ include_once("config.php");
         <a href= "addcust.php">Reservation</a>
         </li>
         <li>
-        <a href= "reservation_detail.php">Check Your reservation</a>
+        <a href= "reservation_detail2.php">Check Your reservation</a>
     </li>
     <li>
         <a href= "indexfood.php">Check Menu</a>
     </li> 
     <li>
-        <a href= "indexreservation.php">Daftar Reservation</a>
-    </li>
-    <li>
-        <a href= "">Feedback </a>
+        <a href= "indexreservation2.php">Daftar Reservation</a>
     </li>
     </ul>
     </nav>
@@ -86,6 +83,24 @@ include_once("config.php");
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation Detail</title>
+</head>
+<body>
+  <h1>Reservation Detail</h1>
+  <form method="post">
+    <label for="reservation_id">Reservation ID:</label>
+    <input  type="text" name="reservation_id"  placeholder="enter your reservation id" id="reservation_id">
+    <input type="submit" name="submit" value="Check Status">
+  </form>
+</body>
+</html>
 
 <?php
 include_once("config.php");
@@ -118,20 +133,3 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservation Detail</title>
-</head>
-<body>
-  <h1>Reservation Detail</h1>
-  <form method="post">
-    <label for="reservation_id">Reservation ID:</label>
-    <input type="text" name="reservation_id" id="reservation_id">
-    <input type="submit" name="submit" value="Check Status">
-  </form>
-</body>
-</html>
